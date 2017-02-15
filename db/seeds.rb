@@ -8,19 +8,19 @@
 
 wines = Wine.create([{name:"PIERRE MIGNON BRUT PRESTIGE (HALF-BOTTLE)",
  description:"Structured, with aromatic complexity. Finishes with an intense but fine length.",
- year:"2012"},
+ year:"2012",price:39.90},
  {name:"BERTÈ & CORDINI CABERNET SAUVIGNON",description:"This wine has a good
 display of cedary oak, cigarbox and blackcurrant. Classic varietal characteristics
 can be found on the palate with flavours of capsicum, good fruit ripeness, and a long finish.",
-year:"2012"},
+year:"2012",price:59.90},
 {name:"MUSTELA MOSCATA D'ASTI",description:"Sweet, fresh and floral, this wine will develop
- after one to two years with underlying ginger undertones and honeyed chestnuts.", year:"2011"},
+ after one to two years with underlying ginger undertones and honeyed chestnuts.", year:"2011",price:19.90},
 {name:"RINKE OBEREMMELER ALTE REBEN RIESLING",description:"Classic Mosel-Saar nose of green apples,
 mineral, and fresh herbs. Green apples and lime flavours on the palate with distinct acidity and
- some sweetness. It reveals when drank with food.", year:"2010"},
+ some sweetness. It reveals when drank with food.", year:"2010",price:39.90},
 {name:"FONDO DEL SOLE NATIVO MADONNA ALTO",description:"The Nativo is produced with Sangiovese, Merlot
  and Cabernet Sauvignon grapes, which are cultivated in Tuscany, close to the border with Umbria,
   between Cortona and Castiglione del Lago, on the rolling hills sloping down towards the Lake Trasimeno.",
-year:"2015"},
+year:"2015",price:99.90},
 {name:"RINKE OBEREMMELER ALTENBERG PINOT NOIR", description:"A mineral and classic Pinot Noir nose of strawberries
-and floral notes. The palate is beautifully balanced and juicy.",year:"2016"}])
+and floral notes. The palate is beautifully balanced and juicy.",year:"2016",price:19.90}])

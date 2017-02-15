@@ -9,7 +9,11 @@
   </head>
 
   <body>
+    <header class="navbar page-icon">
+      <%= link_to '<span class="glyphicon glyphicon-home" aria-hidden="true"></span>'.html_safe, wines_path, class: "btn btn-default pull-left home-btn" %>
+    </header>
     <nav class="navbar navbar-default">
+
       <form class="navbar-form navbar-right">
         <div class="form-group">
           <%= bootstrap_form_for :search, url: search_wines_path, method: :post, class: "input-field" do |f| %>
@@ -19,6 +23,7 @@
         </div>
       </form>
     </nav>
+
     <%= yield %>
   </body>
 </html>

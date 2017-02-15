@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
-  before_action :set_wine, only: [:show, :edit, :update, :destroy]
+  before_action :set_wine, only: [:create, :show, :edit, :update, :destroy]
   def index
     @wine = Wine.all
   end
@@ -9,7 +9,10 @@ class WinesController < ApplicationController
   end
 
   def create
-    @wine = Wine.create(params[:id])
+    @wine = Wine.new(wine_params)
+    render 'new'
+    @wine.save
+    redirect_to wines_path
   end
 
   def edit

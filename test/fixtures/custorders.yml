@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cust_name: MyString
+  email: MyString
+  address: MyText
+  wine_id: 1
+  quantity: 1
+
+two:
+  cust_name: MyString
+  email: MyString
+  address: MyText
+  wine_id: 1
+  quantity: 1

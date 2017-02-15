@@ -1,14 +1,25 @@
 class CustordersController < ApplicationController
   def index
+    @orders = Custorder.all
   end
 
   def show
   end
 
   def new
+    @wine = Wine.find(params[:id])
+    @order = @wine.custorders.build
   end
 
   def create
+    @wine = Wine.find(params[:wine_id])
+    @order = @wine.custorders.new(custorder_params)
+
+    if @order.save
+      redirect_to wine_path(params[:wine_id])
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -18,6 +29,10 @@ class CustordersController < ApplicationController
   end
 
   def destroy
+    @wine = Wine.find(params[:wine_id])
+    @order = @wine.custorders.find(params[:id])
+    @order.destroy
+    redirect_to wine_path(@wine)
   end
 
   private

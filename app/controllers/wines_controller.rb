@@ -29,6 +29,6 @@ private
   end
 
   def wine_params
-    params.require(:wine).permit(:name,:type,:description,:year)
+    params.require(:wine).permit(:name,:type,:description,:year,:price)
   end
 end

@@ -1,10 +1,10 @@
-- form_for [@wine, @order]
-= f.label :cust_name
-= f.text_field :cust_name
-= f.label :email
-= f.text_field :email
-= f.label :address
-= f.text_area :address
-= f.label :quantity
-= f.number_field :quantity
-= f.submit 'Place Order'
+- form_for [@wine, @order] do |f|
+  = f.label :cust_name
+  = f.text_field :cust_name
+  = f.label :email
+  = f.text_field :email
+  = f.label :address
+  = f.text_area :address
+  = f.label :quantity
+  = f.number_field :quantity
+  = f.submit 'Place Order'

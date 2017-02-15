@@ -1,12 +1,15 @@
 = form_for @wine do |f|
-  = f.label :name
-  = f.text_field :name
-  = f.label :type
-  = f.text_field :type
-  = f.label :description
-  = f.text_area :description
-  = f.label :year
-  = f.number_field :year
-  = f.label :price
-  = f.number_field :price
-  = f.submit 'Add a new wine'
+  section
+    = f.label :name
+    = f.text_field :name
+  section
+    = f.label :description
+    = f.text_area :description
+  section
+    = f.label :year
+    = f.number_field :year
+  section
+    = f.label :price
+    = f.number_field :price
+  section
+    = f.submit 'Add a new wine'

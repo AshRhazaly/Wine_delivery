@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
-  before_action :set_wine, only: [:create, :show, :edit, :update, :destroy]
+  before_action :set_wine, only: [:show, :edit, :update, :destroy]
   def index
     @wine = Wine.all
   end
@@ -32,6 +32,6 @@ private
   end
 
   def wine_params
-    params.require(:wine).permit(:name,:type,:description,:year)
+    params.require(:wine).permit(:name,:type,:price,:description,:year)
   end
 end

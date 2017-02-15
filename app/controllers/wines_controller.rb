@@ -1,7 +1,11 @@
 class WinesController < ApplicationController
   before_action :set_wine, only: [:show, :edit, :update, :destroy]
   def index
-    @wine = Wine.all
+    if params[:search]
+      @wine = Wine.search(params[:search])
+    else
+      @wine = Wine.all
+    end
   end
 
   def new
@@ -30,7 +34,7 @@ class WinesController < ApplicationController
 
   def destroy
     @wine.destroy
-    redirect_to wines_path  
+    redirect_to wines_path
   end
 private
   def set_wine

@@ -5,13 +5,20 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag :defaults, "rails.validations" %>
   </head>
 
   <body>
-    <section class="row main-header"></section>
+    <nav class="navbar navbar-default">
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <%= bootstrap_form_for :search, url: search_wines_path, method: :post, class: "input-field" do |f| %>
+          <%= text_field_tag :search, nil, placeholder: " Search by name, description, year..." %>
+          <%= submit_tag 'Search Wine', class: "btn btn-default"%>
+          <% end %>
+        </div>
+      </form>
+    </nav>
     <%= yield %>
   </body>
 </html>

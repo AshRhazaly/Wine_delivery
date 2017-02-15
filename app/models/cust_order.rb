@@ -1,0 +1,2 @@
+class CustOrder < ApplicationRecord
+end

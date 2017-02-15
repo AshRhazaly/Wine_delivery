@@ -1,18 +1,19 @@
-header.container
-  h1 This is the wine
-  = image_tag ("http://placehold.it/350x500")
-  br/
-  == @wine.name
-
-  == @wine.description
-
+header.container.show-page-header
+  == @wine.name 
+  span &nbsp;
   == @wine.year
-  
-
-  = link_to 'Place order', new_wine_order_path(@wine)
-
-  == link_to 'Edit the wine', edit_wine_path
-
-
-  == link_to 'Go back', wines_path
+section.container.wine-contents
+  section.col-xs-6
+    = image_tag ("http://placehold.it/350x500")
+    br /
+  section.col-xs-6
+    == @wine.description
+    br /
+    
+    hr /
+    = link_to 'Place order', new_wine_order_path(@wine), class:"btn btn-success btn-order"
+    span &nbsp;&nbsp;&nbsp;
+    / == link_to 'Edit the wine', edit_wine_path
+    br /
+    == link_to 'Go back', wines_path, class: "btn btn-default btn-go-back"
  

@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @wine = Wine.find(params[:id])
+    @wine = Wine.find(params[:wine_id])
     @order = @wine.orders.build
   end
 

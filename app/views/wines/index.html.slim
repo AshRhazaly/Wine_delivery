@@ -13,6 +13,7 @@ section.container
     section.wine-year
       == wine.year
     == link_to 'Look at this wine', wine_path(wine)
+    == link_to 'Delete Book', wine, method: :delete, data: { confirm: 'Are you sure?' }
     
 
 

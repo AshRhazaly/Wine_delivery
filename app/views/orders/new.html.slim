@@ -1,3 +1,4 @@
 div.order-form
   h2 Place New Order
   = render 'form'
+  == link_to 'Back', wine_path(@wine), class: "btn btn-primary"

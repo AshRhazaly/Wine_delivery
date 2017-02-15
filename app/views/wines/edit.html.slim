@@ -1,3 +1,5 @@
-== render 'form'
+div.edit-form
+  h1 Edit your wine
+  == render 'form'
 
-== link_to 'Go back', wine_path(@wine)
+  == link_to 'Go back', wine_path(@wine), class: "btn btn-primary"

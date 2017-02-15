@@ -1,15 +1,11 @@
-= form_for @wine, validate: true do |f|
-  section
-    = f.label :name
+= bootstrap_form_for @wine, validate: true do |f|
+  
     = f.text_field :name
-  section
-    = f.label :description
+
     = f.text_area :description
-  section
-    = f.label :year
+
     = f.number_field :year
-  section
-    = f.label :price
+
     = f.number_field :price
-  section
-    = f.submit 'Add a new wine'
+  
+    = f.submit 'Add a new wine', class: "btn btn-default"

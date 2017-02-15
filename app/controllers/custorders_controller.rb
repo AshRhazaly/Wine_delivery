@@ -1,6 +1,6 @@
 class CustordersController < ApplicationController
   def index
-    @orders = Custorder.all
+    @orders = Wine.find(params[:id]).Custorders.all
   end
 
   def show
@@ -23,9 +23,18 @@ class CustordersController < ApplicationController
   end
 
   def edit
+    @wine = Wine.find(params[:wine_id])
+    @order = @wine.find(params[:id])
   end
 
   def update
+    @wine = Wine.find(params[:wine_id])
+    @order = @wine.find(params[:id])
+
+    if @order.update
+      redirect_to wine_path(@wine)
+    else
+      render 'edit'
   end
 
   def destroy

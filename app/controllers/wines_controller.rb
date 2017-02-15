@@ -1,4 +1,7 @@
 class WinesController < ApplicationController
+  def index
+  end
+  
   def new
   end
 

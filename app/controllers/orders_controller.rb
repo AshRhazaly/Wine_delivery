@@ -1,6 +1,7 @@
-class CustordersController < ApplicationController
+class OrdersController < ApplicationController
+
   def index
-    @orders = Wine.find(params[:id]).Custorders.all
+    @orders = Wine.find(params[:id]).Order.all
   end
 
   def show
@@ -8,12 +9,12 @@ class CustordersController < ApplicationController
 
   def new
     @wine = Wine.find(params[:id])
-    @order = @wine.custorders.build
+    @order = @wine.orders.build
   end
 
   def create
     @wine = Wine.find(params[:wine_id])
-    @order = @wine.custorders.new(custorder_params)
+    @order = @wine.orders.new(order_params)
 
     if @order.save
       redirect_to wine_path(params[:wine_id])
@@ -35,19 +36,20 @@ class CustordersController < ApplicationController
       redirect_to wine_path(@wine)
     else
       render 'edit'
+    end
   end
 
   def destroy
     @wine = Wine.find(params[:wine_id])
-    @order = @wine.custorders.find(params[:id])
+    @order = @wine.orders.find(params[:id])
     @order.destroy
     redirect_to wine_path(@wine)
   end
 
   private
 
-  def custorder_params
-    params.require(:custorder).permit(:cust_name, :email, :address, :wine_id, :quantity)
+  def order_params
+    params.require(:order).permit(:cust_name, :email, :address, :wine_id, :quantity)
   end
 
 end

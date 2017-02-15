@@ -1,10 +1,14 @@
 
 h1 This is the wine
 
-== wine.name
+= image_tag ("http://placehold.it/350x500")
+br/
+== @wine.name
 
-== wine.description
+== @wine.description
 
-== wine.year
+== @wine.year
+br/
+= link_to 'Place order', new_wine_order_path(@wine)
 
  

@@ -1,2 +1,0 @@
-class Custorder < ApplicationRecord
-end

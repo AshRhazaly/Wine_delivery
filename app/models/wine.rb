@@ -1,3 +1,3 @@
 class Wine < ApplicationRecord
-  has_many :custorders, :dependent => :destroy
+  has_many :orders, :dependent => :destroy
 end

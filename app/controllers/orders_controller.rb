@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
   def index
-    @orders = Wine.find(params[:id]).Order.all
+    @orders = Wine.find(params[:wine_id]).orders.all
   end
 
   def show

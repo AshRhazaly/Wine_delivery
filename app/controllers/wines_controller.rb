@@ -22,7 +22,6 @@ class WinesController < ApplicationController
   end
 
   def show
-    render 'show'
   end
 
   def update

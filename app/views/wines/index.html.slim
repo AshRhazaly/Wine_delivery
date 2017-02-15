@@ -1,3 +1,19 @@
 h1 hello what do you want
 
+section.container
+- @wine.each do |wine|
+  .col-xs-4
+    button class="btn btn-danger"
+    header.wine-image
+      img src="http://placehold.it/250x250"
+    section.wine-name
+      == wine.name
+    section.wine-description
+      == wine.description
+    section.wine-year
+      == wine.year
+    == link_to 'Look at this wine', wine_path(@wine)
+    
+
+
 == link_to 'Lets go and add a wine', new_wine_path

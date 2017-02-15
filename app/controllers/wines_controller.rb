@@ -30,7 +30,7 @@ class WinesController < ApplicationController
 
   def destroy
     @wine.destroy
-    redirect_to wines_path
+    redirect_to wines_path  
   end
 private
   def set_wine

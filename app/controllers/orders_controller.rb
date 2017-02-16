@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
 
   def index
-    @orders = Wine.find(params[:wine_id]).orders.all
+    @wine = Wine.find(params[:wine_id])
+    redirect_to new_wine_order_path
   end
 
   def show

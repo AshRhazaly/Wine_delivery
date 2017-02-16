@@ -23,6 +23,13 @@
 
 nav {
   background-color: black !important;
+  .website-title {
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    margin-top: 15px;
+  }
 }
 .navbar-form{
   margin: 50px;
@@ -40,12 +47,4 @@ nav {
 .navbar .home-btn{
   border-style: none;
   margin: 10px;
-}
-
-.website-title {
-  font-family: 'Roboto Slab', serif;
-  text-align: center;
-  font-size: 40px;
-  color:white;
-  margin-top: 15px;
 }

@@ -13,5 +13,4 @@ class @NotifyWidget
       and will delievered to you at '+ cust_address)
 
 $(document).on 'turbolinks:load', ->
-# $(document).ready -
   converter = new NotifyWidget

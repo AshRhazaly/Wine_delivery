@@ -1,6 +1,10 @@
 class WinesController < ApplicationController
   before_action :set_wine, only: [:show, :edit, :update, :destroy]
   def index
+    @wine = Wine.all
+  end
+
+  def search
     if params[:search]
       @wine = Wine.search(params[:search])
     else

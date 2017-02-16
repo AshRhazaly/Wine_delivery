@@ -1,0 +1,21 @@
+
+section.container.page-container
+  section.container.wine-container
+  - @wine.each do |wine|
+    .col-xs-4
+      header.wine-image
+        img src="http://placehold.it/250x250"
+      br /
+      section.wine-name
+        == wine.name
+      br /
+      section.wine-year
+        == wine.year
+      br /
+      == link_to 'Look at this wine', wine_path(wine), class:"btn btn-info wine-info"
+      hr /
+      / == link_to 'Delete this wine', wine, method: :delete, data: { confirm: 'Are you sure?' }
+    
+
+
+/ == link_to 'Lets go and add a wine', new_wine_path

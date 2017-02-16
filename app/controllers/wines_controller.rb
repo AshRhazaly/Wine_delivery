@@ -4,14 +4,6 @@ class WinesController < ApplicationController
     @wine = Wine.all
   end
 
-  def search
-    if params[:search]
-      @wine = Wine.search(params[:search])
-    else
-      @wine = Wine.all
-    end
-  end
-
   def new
     @wine = Wine.new
   end
@@ -24,6 +16,12 @@ class WinesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def search
+    searched_value = params[:search]
+    @wine = Wine.where("name LIKE ? OR description LIKE ? OR year LIKE ? OR price LIKE ?",
+     "%#{searched_value}%", "%#{searched_value}%", "%#{searched_value}%", "%#{searched_value}%")
   end
 
   def edit

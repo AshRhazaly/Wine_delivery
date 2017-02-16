@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WineDelivery</title>
+    <title>The Wine Guy</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
   </head>
 
   <body>
@@ -13,7 +14,7 @@
       <%= link_to '<span class="glyphicon glyphicon-home" aria-hidden="true"></span>'.html_safe, wines_path, class: "btn btn-default pull-left home-btn" %>
     </header>
     <nav class="navbar navbar-default">
-
+      <div class="website-title">The Wine Guys</div>
       <form class="navbar-form navbar-right">
         <div class="form-group">
           <%= bootstrap_form_for :search, url: search_wines_path, method: :post, class: "input-field" do |f| %>

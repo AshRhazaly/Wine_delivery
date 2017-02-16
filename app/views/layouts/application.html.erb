@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>The Wine Guy</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>The Wine Guy</title>
+        <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    </head>
 
-  <body>
-    <header class="navbar page-icon">
-      <%= link_to '<span class="glyphicon glyphicon-home" aria-hidden="true"></span>'.html_safe, wines_path, class: "btn btn-default pull-left home-btn" %>
-    </header>
-    <nav class="navbar navbar-default">
-      <div class="website-title">The Wine Guys</div>
-        <div class="navbar-form navbar-right">
-          <div class="form-group">
-            <%= bootstrap_form_for :search, url: search_wines_path, method: "POST", class: "input-field" do |f| %>
-            <%= text_field_tag :search, nil, placeholder: " Search by name, description, year..." %>
-            <%= submit_tag 'Search Wine', class: "btn btn-default"%>
-            <% end %>
-          </div>
+    <body>
+        <% if current_user %>
+        <%= link_to('Log Out', destroy_user_session_path, :method => :delete) %>
+        |
+        <%= link_to('Change Password', edit_user_registration_path) %>
+    <% else %>
+        <%= link_to('Sign Up', new_user_registration_path) %>
+        |
+        <%= link_to('Sign In', new_user_session_path) %>
+        <% end %>
+
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <header class="navbar page-icon">
+            <%= link_to '<span class="glyphicon glyphicon-home" aria-hidden="true"></span>'.html_safe, wines_path, class: "btn btn-default pull-left home-btn" %>
+        </header>
+        <nav class="navbar navbar-default">
+            <div class="website-title">The Wine Guys</div>
+            <div class="navbar-form navbar-right">
+                <div class="form-group">
+                    <%= bootstrap_form_for :search, url: search_wines_path, method: "POST", class: "input-field" do |f| %>
+                    <%= text_field_tag :search, nil, placeholder: " Search by name, description, year..." %>
+                    <%= submit_tag 'Search Wine', class: "btn btn-default"%>
+                    <% end %>
+                </div>
+            </div>
         </div>
-      </div>
     </nav>
 
     <%= yield %>
-  </body>
+</body>
 </html>

@@ -1,7 +1,7 @@
 = bootstrap_form_for [@wine, @order], validate: true do |f|
-  = f.text_field :cust_name 
+  = f.text_field :cust_name, class: "cust-name"
   
-  = f.text_field :email
+  = f.text_field :email, class: "email"
   
   = f.text_area :address, class: "order-address"
   

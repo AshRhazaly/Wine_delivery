@@ -10,20 +10,19 @@
     </head>
 
     <body>
-        <% if current_user %>
-        <%= link_to('Log Out', destroy_user_session_path, :method => :delete) %>
-        |
-        <%= link_to('Change Password', edit_user_registration_path) %>
-          <% else %>
-        <%= link_to('Sign Up', new_user_registration_path) %>
-        |
-        <%= link_to('Sign In', new_user_session_path) %>
-        <% end %>
-
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <!-- <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p> -->
         <header class="navbar page-icon">
             <%= link_to '<span class="glyphicon glyphicon-home" aria-hidden="true"></span>'.html_safe, wines_path, class: "btn btn-default pull-left home-btn" %>
+            <div class="navbar-form navbar-right" id="login-links">
+              <% if current_user %>
+              <%= link_to('Log Out', destroy_user_session_path, :method => :delete, class: "btn btn-primary") %>
+              <%= link_to('Change Password', edit_user_registration_path, class: "btn btn-default") %>
+                <% else %>
+              <%= link_to('Sign Up', new_user_registration_path, class: "btn btn-success") %>
+              <%= link_to('Sign In', new_user_session_path, class: "btn btn-primary") %>
+              <% end %>
+            </div>
         </header>
         <nav class="navbar navbar-default">
             <div class="website-title">The Wine Guys</div>

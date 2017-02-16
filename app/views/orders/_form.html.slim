@@ -1,10 +1,10 @@
 = bootstrap_form_for [@wine, @order], validate: true do |f|
-  
   = f.text_field :cust_name 
   
   = f.text_field :email
   
-  = f.text_area :address
+  = f.text_area :address, class: "order-address"
   
-  = f.number_field :quantity
-  = f.submit 'Place Order', class: "btn btn-default"
+  = f.number_field :quantity, class: "order-quantity"
+  = f.submit 'Place Order', class: "btn btn-default wine-order"
+  

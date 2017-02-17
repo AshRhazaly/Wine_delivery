@@ -7,10 +7,10 @@ section.container.page-container
         img src="http://placehold.it/250x250"
       br /
       section.wine-name
-        == wine.name
+        == highlight(wine.name, @searched_value)
       br /
       section.wine-year
-        == wine.year
+        == highlight(wine.year, @searched_value)
       br /
       == link_to 'Look at this wine', wine_path(wine), class:"btn btn-info wine-info"
       hr /

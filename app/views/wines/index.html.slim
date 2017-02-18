@@ -4,7 +4,7 @@ section.container.page-container
   - @wine.each do |wine|
     .col-xs-4
       header.wine-image
-        img src="http://placehold.it/250x250"
+        == image_tag wine.image.url(:medium)
       br /
       section.wine-name
         == wine.name

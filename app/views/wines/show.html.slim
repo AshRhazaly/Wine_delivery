@@ -4,7 +4,7 @@ header.container.show-page-header
   == @wine.year
 section.container.wine-contents
   section.col-xs-6
-    = image_tag ("http://placehold.it/350x500")
+    = image_tag @wine.image.url(:large)
     br /
   section.col-xs-6
     span.wine-price

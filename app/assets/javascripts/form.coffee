@@ -22,8 +22,8 @@ class @NotifyWidget
         cust_address = @order_address.val()
         wine_price = @order_price.val()
         total_amount = amount_ordered * wine_price
-        alert('You have ordered '+amount_ordered+' wines. It
-        will delievered to you at '+ cust_address + " and it'll cost you $" + total_amount.toFixed(2))
+        alert('You have ordered '+amount_ordered+' wines
+        and will delievered to you at '+ cust_address + " and it'll cost you $" + total_amount.toFixed(2))
 
   # order_verify: =>
   #   @order_quantity.on 'focusout', =>

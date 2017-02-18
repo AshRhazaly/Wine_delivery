@@ -5,6 +5,7 @@ class @NotifyWidget
     @order_address = $('.order-address')
     @order_cust_name = $('.cust-name')
     @order_email = $('.email')
+    @order_price = $('.wine-price')
     # @order_quantity_id = $('#order_quantity')
     # @order_address_id = $('#order_address')
     # @order_email_id = $('#order_email')
@@ -19,8 +20,10 @@ class @NotifyWidget
       else
         amount_ordered = @order_quantity.val()
         cust_address = @order_address.val()
-        alert('You have ordered '+amount_ordered+' wines
-        and will delievered to you at '+ cust_address)
+        wine_price = @order_price.val()
+        total_amount = amount_ordered * wine_price
+        alert('You have ordered '+amount_ordered+' wines. It
+        will delievered to you at '+ cust_address + " and it'll cost you $" + total_amount.toFixed(2))
 
   # order_verify: =>
   #   @order_quantity.on 'focusout', =>

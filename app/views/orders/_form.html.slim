@@ -8,3 +8,7 @@
   = f.number_field :quantity, class: "order-quantity"
   = f.submit 'Place Order', class: "btn btn-default wine-order"
   
+
+= form_for @wine do |wine|
+
+  = wine.number_field :price, class: "wine-price"

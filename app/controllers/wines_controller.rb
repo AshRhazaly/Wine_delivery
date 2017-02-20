@@ -22,8 +22,8 @@ class WinesController < ApplicationController
 
   def search
     @searched_value = params[:search]
-    @wine = Wine.where("name LIKE ? OR description LIKE ? OR year LIKE ? OR price LIKE ?",
-     "%#{@searched_value}%", "%#{@searched_value}%", "%#{@searched_value}%", "%#{@searched_value}%")
+    @wine = Wine.where("name LIKE ? OR description LIKE ? OR year LIKE ? ",
+     "%#{@searched_value}%", "%#{@searched_value}%", "%#{@searched_value}%")
   end
 
   def edit
